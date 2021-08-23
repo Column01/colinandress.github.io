@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-		<title>Colin's Website - Password Cracker</title>
-		<meta name="description" content="Python Password Cracker written for fun" />
+		<title>Colin's Website - Discord Moderation Bot</title>
+		<meta name="description" content="Python modular moderation bot" />
 		<meta name="keywords" content="php,programming,python,colin,colin andress,website,html" />
 		<meta name="robots" content="index,follow" />
 		<meta charset="utf-8" />
@@ -55,16 +55,21 @@
 		<!-- Dev Blog -->
 		<div class="conatiner container-fluid mt-3 px-lg-5" style="width: 85%;">
 			<div class="container-header" style="background-color: #343A40 !important; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px">
-				<h2 style="color: white; text-decoration: underline;">Password Cracker</h2>
+				<h2 style="color: white; text-decoration: underline;">Modular Discord Moderation Bot</h2>
 			</div>
 			<div id="paddingdiv" style="padding-top: 10px;"></div>
 			<div class="container-body" style="background-color: #D6D8DB !important; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px ">
-				<p>Source code can be found on the <a href="https://github.com/Column01/Python-Scripts/tree/master/Password%20Cracker">github repository.</a><br /></p>
+				<p>Source code can be found on the <a href="https://github.com/Column01/Discord-Moderation-Bot">github repository.</a><br /></p>
 				<hr style="height: 1.5px;" noshade />
 				<h4 style="text-decoration: underline;">Description</h4>
-					<p>I made this project simply because I wanted to create something that was fun and sort of easy. It started out by watching <a href="https://www.youtube.com/watch?v=pcErNYk7vCs">this video</a> by NullByte on YouTube and lead to me wanting to make something similar. I added another layer of cracking not covered by them in their video and added some more code to it to make it user friendly.
+					<p>This moderation bot started as a tool for a discord server for a minecraft network I worked for.
+                        When I left that network, I converted it to be a more generic bot and finally I decided to add something bold.
+                        With a few clever techniques, I added code to allow the end user to dynamically add commands and event handlers to the bot and reload them on the fly.
+                        In theory, this bot is FULLY modular, it could be completely changed without ever needing to stop the program.
 					<br />
-					It uses a JSON config for things, allowing for you to disable the bruteforce method and just check the dictionary as well as setting character set/password length. I thought it was pretty cool and I put it on Github. I had some unrealistic plans for it (A GUI among other things) and I axed them a while ago and will just add to it wherever I feel lead to.
+                    <br />
+    					The event handlers are added to the main script using python "reflection" and some clever techniques that enable my code to be an order of magnitude smaller compared to implementing each event function.
+                        It takes some info provided by the handler class and <a href="https://github.com/Column01/Discord-Moderation-Bot/blob/master/event_registry.py#L63-L94">creates a function</a> in the bot using a <a href="https://github.com/Column01/Discord-Moderation-Bot/blob/master/bot.py#L46-L56">template</a> renamed <code>on_&lt;event&gt;</code>. Effectively ~40 lines of code can handle what could have been upwards of thousands of lines and is completely future proof. When new events are added, I don't even need to write any new code to handle their addition.
 					</p>
 				<hr style="height: 1.5px;" noshade />
 			</div>
