@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<title>Colin's Website - Simple Chatbot</title>
+		<meta name="description" content="Simple Chatbot development updates and Source Code" />
+		<meta name="keywords" content="php,programming,python,colin,colin andress,website,html" />
+		<meta name="robots" content="index,follow" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="manifest" href="/images/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	</head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131491477-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-131491477-1');
+	</script>
+    <body style="background-image: url('/background.jpg');">
+		<!-- Dev Blog -->
+		<div class="conatiner container-fluid mt-3 px-lg-5" style="width: 85%;">
+			<div class="container-header" style="background-color: #343A40 !important; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px;">
+				<h3 style="color: white; text-decoration: underline;">Simple Chatbot</h3>
+			</div>
+			<div id="paddingdiv" style="padding-top: 10px;"></div>
+			<div class="container-body" style="background-color: #D6D8DB !important; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px;">
+				<p>A chatbot written in Python for twitch IRC (twitch chat). Keep your viewers engaged with an interactive chatbot where they can earn currency and gamble for fun! Make fun little command responses that are unique to you!<br />
+				Source code can be found on the <a href="https://github.com/Column01/Simple-Chatbot">github repository.</a><br />
+				Please post ALL bug reports in the issues page on the github!
+				</p>
+				<hr style="height: 1.5px;" noshade />
+				<h5 style="text-decoration: underline;">Development Update #4 (04/08/2019)</h5>
+					<p>Slots are now fully implemented!
+					<br />
+					The beauty of writing all these custom modules early in development makes adding new features super simple. I only had to write one new function to make the script work (cost_subtract) and after some minor troubleshooting, it worked flawlessly. Not a whole lot to say other than that and some other improvements were made like cleaner command parsing. Check out the update on the github linked at the top of this page!</p>
+				<hr style="height: 1.5px;" noshade />
+				<h5 style="text-decoration: underline;">Development Update #3 (04/04/2019)</h5>
+					<p>I have just added some new and awesome changes to the github for this project! Over the past couple of weeks I toyed a lot with where I wanted to go from here and how I could make my life easier in the future when I need to move forward. Here is an overview of some of the functions I've added:
+					<br />
+					<ul>
+						<li style="text-decoration: underline;"><strong>SqliteReadDB</strong></li>
+							<ul>
+								<li>read_username(userid) - Gets the username from the given user that comes from twitch</li>
+								<li>read_cooldown(userid,  game) - Gets the cooldown state or duration (false if they aren't on cooldown and a number if they are) for the specified user and game</li>
+								<li>read_currency(userid) - Gets the currency amount for the specified user</li>
+							</ul>
+						<li style="text-decoration: underline;"><strong>SqliteUpdateDB</strong></li>
+							<ul>
+								<li>update_username(userid, username) - Updates the username. Only called if the database username and the twitch username do not match (run every time a command is received).</li>
+								<li>add_user(userid, username, currency, joincooldown, slotscooldown) - Adds the specified user to the databse with some cookie cutter information provided from the main script (can be altered if you want to add currency to start)</li>
+								<li>add_currency(userid, currency)  - Adds the specified currency amount to the user. Math is done in the function using the currency in the database (pulled internally)</li>
+								<li>add_cooldown(userid, game, cooldown) - Adds a cooldown for the user for the specified duration and command (game).</li>
+							</ul>
+						<li style="text-decoration: underline;"><strong>commandParser</strong></li>
+							<ul>
+								<li>response_format(e, settings, cmd) - Will format the response to a command as well as checks if the command is valid. This allows for command additions from the config file (!!!)</li>
+							</ul>
+					</ul>
+					I also added some import exceptions to fix intermittent errors I received when running the bot from command line versus in my IDE
+					<br />
+					Overall, I am very happy with the progress I made here, and will be taking a short break to recuperate and mess around with some stuff internally. I've learned so much recently and my brain just feels stuffed full of information (and I love it)!
+					<br />
+					Thanks for reading!
+					</p>
+				<hr style="height: 1.5px;" noshade />
+				<h5 style="text-decoration: underline;">Development Update #2 (03/19/2019)</h5>
+					<p>After almost a month of messing about and brainstorming ideas, I threw together some prototypes of a user storage system. After trying out JSON (and eventually CSV when I got frustrated and wanted something more simple), it then dawned on me that as the database grows in size, so will my memory usage as the entire file would have to be loaded into memory. This is what lead me to land on SQLite for the database of choice as it is easier to setup, easier to make changes to the database and way easier to find data from it. What started as 20+ lines of code to write a simple entry to the file, turned into 20 for the entirety of basic database management. This with the added benefit of being able to make the file automatically without issues or hard coded formatting being needed made SQLite the perfect tool for the job. 
+					<br />
+					Now that I am happy with the progress I've made on the user storage, I will finally be able to move forward integrating more advanced systems to the bot. The first step will be start work on a cooldown system for the bot, and I already have some good ideas on how I want to do this. Once that's done I can start adding games to the bot and storing currency. I will post another update when I make more progress, and hopefully have a working bot by the summer. Keep your eyes out for a development stream or two in the near future and maybe you can help me test it LIVE.
+					<br />
+					For a sneak peak at the progress back-end (albeit it's a small step looking on externally but a big one for me in my learning experience) you can see some photos <a href="https://imgur.com/gallery/0IChmcL">on imgur.<a>
+					</p>
+				<hr style="height: 1.5px;" noshade />
+				<h5 style="text-decoration: underline;">Development Update #1 (02/20/2019)</h5>
+					<p>The very basic chatbot has been added to the repository. It has twitch chat integration and very basic command responses. The plan is to integrate my !slots and !join commands from my StreamLabs Scripts, but in order to do that I need to lay a lot of groundwork. Some of the items I need are as follows:
+					<br />
+					<ul>
+						<li>User storage database</li>
+						<li>Cooldowns</li>
+						<li>Currency</li>
+						<li>User IDs</li>
+					</ul>
+					All these things are work in progress at the moment, but we have an idea on how we want to do this using the API and a JSON file. Updates will be posted here
+					</p>
+			</div>
+		</div>
+		<!-- End Dev Blog -->
+		<footer style="color: white; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; background-color: #343A40 !important;">To see more of my projects, visit my <a href="/projects/">projects page.</a></footer>
+	</body>
+</html>
