@@ -30,6 +30,8 @@
 		<script>
 			$(document).ready( function() {
 				$("#nav").load("/nav.html");
+			});
+			$(window).bind("load", function() {
 				$("#projects").addClass("active");
 			});
 		</script>
