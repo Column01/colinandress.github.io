@@ -27,7 +27,9 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 		<link rel="stylesheet" href="styles/style.css" />
+
 		<script>
 			$(document).ready(function() {
 				$("#nav").load("/nav.html");
@@ -37,19 +39,20 @@
 			});
 		</script>
 	</head>
-    <body style="background-image: url('/background.jpg');">
+    <body style="background-image: url('background.jpg');">
     	<div id="nav"></div>
 		<!-- About me Container-->
-		<div class="conatiner container-fluid" style="padding-top: 10px; width: 90%">
-			<div class="container-header" style="background-color: #343A40 !important; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;">
-				<h2 style="color:white; text-decoration:underline;">About Me</h2>
+		<div class="conatiner container-fluid content-theme" style="width: 90%;">
+
+			<div class="row header-theme">
+				<h2 class="padding-10" style="text-decoration:underline;">About Me</h2>
 			</div>
-			<div id="paddingdiv" style="padding-top: 10px;"></div>
-			<div class="row" style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;">
-				<div class="col" style="background-color: #D6D8DB !important; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;">
-					<hr style="height: 1.5px;" noshade />
+
+			<div class="row">
+				<div class="col">
+					<hr noshade />
 					<h3>Hey, I'm Colin!</h3>
-					<hr style="height: 1.5px;" noshade />
+					<hr noshade />
 					<p>I write software freelance and do some minor web development (such as the website you see before you now.)
 						I love to write python scripts to improve my programming skills.
 						I mainly write programs in Python, but I am fluent in Java, HTML, JavaScript and have minor experience writing CSS, C# and C as well.</p>
@@ -57,15 +60,16 @@
 					<p>If you'd like to see what projects I have available, my <a href="https://github.com/Column01">GitHub profile</a> is a good start.
 						If you want to see dev blogs for some of the stuff I'm working on, you can view that on the <a href="/projects">projects page</a></p>
 				</div>
-				<div class="col" style="text-align: center;" id="content-desktop">
+				<div class="col content-desktop" style="text-align: center;">
 					<img src="images/pfp.png" style="width: 75%;">
 				</div>
 			</div>
-			<div class="row" style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;">
-				<div class="col" style="background-color: #D6D8DB !important; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;">
-					<hr style="height: 1.5px;" noshade />
+
+			<div class="row">
+				<div class="col">
+					<hr noshade />
 					<h3 id="experience">Work Experience</h3>
-					<hr style="height: 1.5px;" noshade />
+					<hr noshade />
 					<ul>
 						<li>
 							<b>Junior Software Developer</b> - <i>Aethon Aerial Solutions (April 2020 - April 2021)</i>
@@ -74,7 +78,7 @@
 								<li>Developed tools for converting, previewing, and analyzing flight log data (from the above software) with an attractive user interface</li>
 							</ul>
 						</li>
-						<hr style="height: 1.5px;" noshade />
+						<hr noshade />
 						<li>
 							<b>Software Developer/Maintainer</b> <i>(volunteer)</i> - <i>mark2 (July 2021 - Present)</i>
 							<ul>
@@ -83,7 +87,7 @@
 								<li><a href="https://github.com/gsand/mark2">Link to mentioned software</a></li>
 							</ul>
 						</li>
-						<hr style="height: 1.5px;" noshade />
+						<hr noshade />
 						<li>
 							<b>Software Developer/Audio Visual Technician</b> <i>(volunteer)</i> - <i>Centennial Park Baptist Church (January 2014 - Present)</i>
 							<ul>
@@ -92,7 +96,7 @@
 								<li><a href="https://github.com/Column01/PTZCamSync">Link to mentioned software</a></li>
 							</ul>
 						</li>
-						<hr style="height: 1.5px;" noshade />
+						<hr noshade />
 						<li>
 							<b>Server Administrator/Software Developer</b> <i>(volunteer)</i> - <i>CraftersNexus (June 2020 - Present)</i>
 							<ul>
@@ -102,7 +106,7 @@
 								<li>Provide high performance private server hosting for small groups and 1 on 1 customization and support for them</li>
 							</ul>
 						</li>
-						<hr style="height: 1.5px;" noshade />
+						<hr noshade />
 						<li>
 							<b>Server Administrator/Customer Service rep</b> <i>(volunteer)</i> - <i>MineYourMind inc. (November 2016 - May 2020)</i>
 							<ul>
@@ -111,14 +115,20 @@
 							</ul>
 						</li>
 					</ul>
-					<hr style="height: 1.5px;" noshade />
+
+					<hr noshade />
+
 					<h3 id="references">References</h3>
-					<hr style="height: 1.5px;" noshade />
+
+					<hr noshade />
+
 					<blockquote class="blockquote text-center">
 						<p style="font-size: 18px;">As Colin's manager he accomplished tasks above and beyond what was expected and showed excellent communication skills.</p>
 						<footer class="blockquote-footer">Scott Peacock - <i>Manager, Product Development at Aethon Aerial Solutions</i></footer>
 					</blockquote>
-					<hr style="height: 1.5px;" noshade />
+
+					<hr noshade />
+
 					<blockquote class="blockquote text-center">
 						<p style="font-size: 18px;">As the principle owner at CN I oversee the day to day operations and long term goals of the network, including Colin's development and technical work. 
 							Colin has taken an extremely active role in our development team, essentially taking over any and all Python duties, as well as contributing elsewhere whenever it is asked of him. 
@@ -127,14 +137,18 @@
 							I simply cannot emphasize how much having Colin as a part of our team has enhanced our business as a whole and specifically our development team.</p>
 						<footer class="blockquote-footer">GreyWolf11 - <i>Founder at Crafters Nexus</i></footer>
 					</blockquote>
-					<hr style="height: 1.5px;" noshade />
+
+					<hr noshade />
+
 					<blockquote class="blockquote text-center">
 						<p style="font-size: 18px;">Colin was instrumental in helping our church transition to online services. 
 							This included webcam installation, software set-up, training of all volunteers on how to operate and conduct a live streamed service. 
 							It included many hours and was done with professionalism and efficiency.</p>
 						<footer class="blockquote-footer">Chris Stefanidis - <i>Rev. (Dmin cand.) at Centennial Park Baptist Church</i></footer>
 					</blockquote>
-					<hr style="height: 1.5px;" noshade />
+
+					<hr noshade />
+
 					<blockquote class="blockquote text-center">
 						<p style="font-size: 18px;">Colin has the fundamental computer programming knowledge and insight needed to design and develop software modules. 
 							His enthusiastic attitude keeps him engaged in learning about relevant technology. 
@@ -142,7 +156,9 @@
 							He takes ownership of his solutions and welcomes input and suggestions.</p>
 						<footer class="blockquote-footer">Brent Heidman - <i>Computer Support Specialist at Bayview Flowers Ltd.</i></footer>
 					</blockquote>
-					<hr style="height: 1.5px;" noshade />
+
+					<hr noshade />
+
 					<blockquote class="blockquote text-center">
 						<p style="font-size: 18px;">I have known Colin as his Pastor/ Minister for the last 10 years. 
 							In any job he has done for me, Colin demonstrates: a willingness to go above expectations; a hard working spirit; terrific technical competence in all aspects involving the computer and online subjects; perseverance at the task until the job is completed.
@@ -151,7 +167,8 @@
 							I have the highest regard for Colin..</p>
 						<footer class="blockquote-footer">Barry Jones - <i>Rev. (retired) at Centennial Park Baptist Church</i></footer>
 					</blockquote>
-					<hr style="height: 1.5px;" noshade />
+
+					<hr noshade />
 				</div>
 			</div>
 		</div>

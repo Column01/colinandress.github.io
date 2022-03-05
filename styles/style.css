@@ -1,9 +1,54 @@
-#content-desktop {display: block;}
-#content-mobile {display: none;}
+.content-desktop {
+    display: block;
+}
+.content-mobile {
+    display: none;
+}
 
 @media screen and (max-width: 768px) {
+    .content-desktop {
+        display: none;
+    }
+    .content-mobile {
+        display: block;
+    }
+}
 
-#content-desktop {display: none;}
-#content-mobile {display: block;}
+.link {
+    color: #1cc72c;
+}
 
+.padding-10 {
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-top: 10px; 
+    padding-bottom: 10px;
+}
+
+.header-theme {
+    background-color: #343A40 !important;
+    color: white;
+}
+
+.content-theme {
+    background-color: #3d3d3d !important;
+    color: white;
+}
+
+.spacer {
+    height: 10px;
+}
+
+hr {
+    height: 1.5px;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #828391;
+}
+
+a {
+    text-decoration: underline;
+    color: #acadb6;
 }
